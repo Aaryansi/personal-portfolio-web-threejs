@@ -39,7 +39,7 @@ const Navbar = () => {
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className={`neon-glow flex gap-8 items-center justify-center shadow-lg transition-all duration-500 ${isHovered ? 'hovered' : ''}`}>
-        {/* Links with neon animation on click */}
+        {/* Links with neon animation on click
         <Link
           to="hero"
           smooth={true}
@@ -49,7 +49,7 @@ const Navbar = () => {
         >
           Home
           <span className="neon-underline"></span>
-        </Link>
+        </Link> */}
         <Link
           to="about"
           smooth={true}
