@@ -29,20 +29,14 @@ const debugLogs = [
   "[DEBUG] Pickleball reflexes recalibrated. 🏓",
   "[INFO] Ridez app gaining traction... Ashton awaits! 🚗",
   "[WARNING] Laughter buffer nearing overflow! 😂",
-  "[DEBUG] Genetic Algorithm evolution cycle complete. 🧬",
   "[INFO] Verilog compiler running at 2 AM. 🌙",
-  "[ERROR] Recursive procrastination detected! 🔁",
-  "[WARNING] APO emails flooding inbox... 📬",
   "[DEBUG] Weekend friend meetups scheduled. 🏡",
   "[INFO] Coke consumption reaching optimal levels. 🥤",
-  "[WARNING] Too many Instagram stories reacted to! ❤️",
   "[ERROR] Firebase rates exceeded... deploying workaround. ☁️",
   "[INFO] JavaScript and TypeScript in perfect harmony. 🎵",
   "[DEBUG] Bhopal's only Rose-Hulman rep still going strong! 🇮🇳",
   "[WARNING] Badminton wrist flick overpowered! 💥",
-  "[ERROR] Big/Little event causing memory leaks! 🧠",
   "[DEBUG] Code refactored at midnight… again. 🌜",
-  "[INFO] Snapchat streaks maintained under high load. 🔥"
 ];
 
 const About = () => {
