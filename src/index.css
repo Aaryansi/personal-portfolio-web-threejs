@@ -1,0 +1,217 @@
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: black;
+  color: white;
+}
+
+
+
+/* Smooth Fade-In Animation */
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fixed {
+    position: fixed;
+    z-index: 10;
+  }
+  
+  .right-0 {
+    right: 0;
+  }
+  
+  .h-screen {
+    height: 100vh;
+  }
+  
+  .w-80 {
+    width: 20rem; /* Adjust based on desired width */
+  }
+  
+  
+  .animate-fade-in {
+    animation: fadeIn 1.5s ease forwards;
+  }
+  
+.font-stylish {
+  font-family: 'Raleway', sans-serif;
+}
+
+
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+a {
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #2563eb; /* Blue */
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* Smooth Opacity Transition */
+.transition-opacity {
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .opacity-0 {
+    opacity: 0;
+  }
+  
+  .opacity-100 {
+    opacity: 1;
+  }
+
+  /* Smooth Opacity Transition */
+.transition-opacity {
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .opacity-0 {
+    opacity: 0;
+  }
+  
+  .opacity-100 {
+    opacity: 1;
+  }
+  
+  /* Text Fade-in Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 1.5s ease forwards;
+  }
+  
+  .animate-fade-in-delay {
+    animation: fadeIn 2s ease forwards;
+  }
+  
+  
+  /* Text Fade-in Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 1.5s ease forwards;
+  }
+  
+  .animate-fade-in-delay {
+    animation: fadeIn 2s ease forwards;
+  }
+  
+
+@keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .animate-gradient {
+    animation: gradient 8s ease infinite;
+    background-size: 200% 200%;
+  }
+  
+  /* Text Fade-in Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  #about {
+    position: relative;
+    padding-bottom: 120px; /* Prevents content from reaching navbar */
+  }
+  
+  
+  .animate-fade-in {
+    animation: fadeIn 1.5s ease forwards;
+  }
+  
+  .animate-fade-in-delay {
+    animation: fadeIn 2s ease forwards;
+  }
+
+
+
+/* Social Links - Neon Glow Effect */
+.neon-link {
+  position: relative;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+}
+
+/* Text Glow on Hover */
+.neon-link:hover {
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.8), 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+/* Animated Underline Effect */
+.neon-link::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+  transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+
+/* Expand Underline from Left to Right on Hover */
+.neon-link:hover::after {
+  width: 100%;
+  opacity: 1;
+}
