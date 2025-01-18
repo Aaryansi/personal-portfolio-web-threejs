@@ -41,7 +41,7 @@ const Navbar = () => {
       <div className={`neon-glow flex gap-8 items-center justify-center shadow-lg transition-all duration-500 ${isHovered ? 'hovered' : ''}`}>
         {/* Links with neon animation on click */}
         <Link
-          to="home"
+          to="hero"
           smooth={true}
           duration={500}
           className={`nav-link ${activeLink === 'hero' ? 'active' : ''}`}
