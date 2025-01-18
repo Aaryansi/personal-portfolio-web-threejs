@@ -14,7 +14,7 @@ const projects = [
     caption: "Your Ride, Your Way.",
     description:
       "An Uber-like ride-sharing app built for Ashton and nearby neighborhoods using Flutter and Firebase.",
-    link: "https://github.com/Aaryansi/ashton-rides",
+    link: "https://github.com/Aaryansi/ridez",
   },
   {
     title: "Genetic Algorithm Research",
@@ -35,7 +35,7 @@ const projects = [
     caption: "AI-Powered Beverage Analysis (Ongoing).",
     description:
       "An AI-driven system for analyzing and recommending beverages based on preferences and trends.",
-    link: "",
+    link: "https://github.com/Aaryansi/beverage-ai",
   },
 ];
 
