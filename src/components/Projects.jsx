@@ -13,7 +13,7 @@ const projects = [
     title: "Ridez",
     caption: "Your Ride, Your Way.",
     description:
-      "An Uber-like ride-sharing app built for Ashton and nearby neighborhoods using Flutter and Firebase.",
+      "An Uber-like ride-sharing app built for Rose-Hulman community and nearby neighborhoods using Flutter and Firebase.",
     link: "https://github.com/Aaryansi/ridez",
   },
   {
