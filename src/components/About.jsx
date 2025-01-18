@@ -19,13 +19,30 @@ const techStack = [
 
 const debugLogs = [
   "[INFO] Portfolio rendering successful ✅",
-  "[DEBUG] Experimenting with GSAP animations...",
-  "[WARNING] Sleep schedule might be compromised!",
-  "[ERROR] System overload: Too many projects at once!",
-  "[INFO] Flutter and Firebase connection stable.",
-  "[DEBUG] AI module initialization in progress...",
-  "[WARNING] Running low on Coca-Cola supply!",
-  "[ERROR] Brain processing too many ideas at once!"
+  "[DEBUG] Experimenting with GSAP animations... 🔧",
+  "[WARNING] Sleep schedule might be compromised! 😴",
+  "[ERROR] System overload: Too many projects at once! 🚀",
+  "[INFO] Flutter and Firebase connection stable. 📡",
+  "[DEBUG] AI module initialization in progress... 🤖",
+  "[WARNING] Running low on Coca-Cola supply! 🥤",
+  "[ERROR] Brain processing too many ideas at once! ⚡️",
+  "[DEBUG] Pickleball reflexes recalibrated. 🏓",
+  "[INFO] Ridez app gaining traction... Ashton awaits! 🚗",
+  "[WARNING] Laughter buffer nearing overflow! 😂",
+  "[DEBUG] Genetic Algorithm evolution cycle complete. 🧬",
+  "[INFO] Verilog compiler running at 2 AM. 🌙",
+  "[ERROR] Recursive procrastination detected! 🔁",
+  "[WARNING] APO emails flooding inbox... 📬",
+  "[DEBUG] Weekend friend meetups scheduled. 🏡",
+  "[INFO] Coke consumption reaching optimal levels. 🥤",
+  "[WARNING] Too many Instagram stories reacted to! ❤️",
+  "[ERROR] Firebase rates exceeded... deploying workaround. ☁️",
+  "[INFO] JavaScript and TypeScript in perfect harmony. 🎵",
+  "[DEBUG] Bhopal's only Rose-Hulman rep still going strong! 🇮🇳",
+  "[WARNING] Badminton wrist flick overpowered! 💥",
+  "[ERROR] Big/Little event causing memory leaks! 🧠",
+  "[DEBUG] Code refactored at midnight… again. 🌜",
+  "[INFO] Snapchat streaks maintained under high load. 🔥"
 ];
 
 const About = () => {
@@ -78,8 +95,9 @@ const About = () => {
           About Me
         </h2>
         <p ref={textRef} className="text-xl text-gray-300 font-light mb-8">
-          Hey! I’m Aaryan, a Computer Science student at Rose-Hulman Institute of Technology from Bhopal, India. 
-          I love building intuitive web and mobile applications, exploring AI, and solving complex problems with code.
+          Hey! I’m Aaryan, a Computer Science explorer at Rose-Hulman Institute of Technology, originally from Bhopal, India. 
+          I spend my time scrolling on tech blogs, books, jokes, tinkering with AI that probably thinks too much, and solving problems that didn’t exist until I found them.
+          Fueled by curiosity, late-night coding, and an unhealthy love for Coca-Cola, I thrive on building, breaking, and rebuilding until things just click or maybe go to production successfully.
         </p>
 
         {/* Tech Stack */}
@@ -106,9 +124,9 @@ const About = () => {
 
         {/* Social Links */}
         <div ref={socialLinksRef} className="flex gap-6 justify-center md:justify-start mt-8">
-            <a href="https://www.linkedin.com/in/aaryansi/" target="_blank" rel="noopener noreferrer" className="text-lg font-medium neon-link">LinkedIn</a>
-            <a href="https://github.com/Aaryansi" target="_blank" rel="noopener noreferrer" className="text-lg font-medium neon-link">GitHub</a>
-            <a href="https://www.instagram.com/aaryan.sb/" target="_blank" rel="noopener noreferrer" className="text-lg font-medium neon-link">Instagram</a>
+          <a href="https://www.linkedin.com/in/aaryansi/" target="_blank" rel="noopener noreferrer" className="text-lg font-medium neon-link">LinkedIn</a>
+          <a href="https://github.com/Aaryansi" target="_blank" rel="noopener noreferrer" className="text-lg font-medium neon-link">GitHub</a>
+          <a href="https://www.instagram.com/aaryan.sb/" target="_blank" rel="noopener noreferrer" className="text-lg font-medium neon-link">Instagram</a>
         </div>
       </div>
 

@@ -32,8 +32,8 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav 
-      className="floating-navbar" 
+    <nav
+      className="floating-navbar"
       style={{ bottom: `${bottomSpacing}px` }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -44,8 +44,8 @@ const Navbar = () => {
           to="home"
           smooth={true}
           duration={500}
-          className={`nav-link ${activeLink === 'home' ? 'active' : ''}`}
-          onClick={() => setActiveLink('home')}
+          className={`nav-link ${activeLink === 'hero' ? 'active' : ''}`}
+          onClick={() => setActiveLink('hero')}
         >
           Home
           <span className="neon-underline"></span>
@@ -70,16 +70,13 @@ const Navbar = () => {
           Projects
           <span className="neon-underline"></span>
         </Link>
-        <Link
-          to="contact"
-          smooth={true}
-          duration={500}
-          className={`nav-link ${activeLink === 'contact' ? 'active' : ''}`}
-          onClick={() => setActiveLink('contact')}
+        <a
+          href="mailto:singha9@rose-hulman.edu"
+          className="nav-link"
         >
           Contact
           <span className="neon-underline"></span>
-        </Link>
+        </a>
       </div>
     </nav>
   );
