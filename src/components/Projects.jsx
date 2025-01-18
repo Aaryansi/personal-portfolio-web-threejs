@@ -37,6 +37,14 @@ const projects = [
       "An AI-driven system for analyzing and recommending beverages based on preferences and trends.",
     link: "https://github.com/Aaryansi/beverage-ai",
   },
+
+  {
+    title: "Aaryan's Website",
+    caption: "This portfolio.",
+    description:
+      "A personal portfolio website built with React.js and Three.js, showcasing integrated GLTF models and styled with GSAP & Tailwind CSS.",
+    link: "https://github.com/Aaryansi/beverage-ai",
+  },
 ];
 
 const AnimatedModel = () => {
