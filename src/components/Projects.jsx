@@ -9,8 +9,17 @@ import * as THREE from "three";
 gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
+
   {
-    title: "Ridez",
+    title: "Rose Reviews",
+    caption: "RHIT Course & Prof Review Platform.",
+    description:
+      "A web application for Rose-Hulman students to review courses and professors, built using React.js, Node.js, Rosefire & Firestore.",
+    link: "https://www.rosereviews.com",
+  },
+
+  {
+    title: "Rose Rides (in progress)",
     caption: "Your Ride, Your Way.",
     description:
       "An Uber-like ride-sharing app built for Rose-Hulman community and nearby neighborhoods using Flutter and Firebase.",
