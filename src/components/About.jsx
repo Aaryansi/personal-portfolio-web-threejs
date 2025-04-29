@@ -120,7 +120,11 @@ const About = () => {
         <div ref={socialLinksRef} className="flex gap-6 justify-center md:justify-start mt-8">
           <a href="https://www.linkedin.com/in/aaryansi/" target="_blank" rel="noopener noreferrer" className="text-lg font-medium neon-link">LinkedIn</a>
           <a href="https://github.com/Aaryansi" target="_blank" rel="noopener noreferrer" className="text-lg font-medium neon-link">GitHub</a>
+          <a href="/singh_aaryan_resume.pdf" target="_blank" rel="noopener noreferrer" className="text-lg font-medium neon-link">
+            Resume
+          </a>
           <a href="https://www.instagram.com/aaryan.sb/" target="_blank" rel="noopener noreferrer" className="text-lg font-medium neon-link">Instagram</a>
+          
         </div>
       </div>
 
