@@ -13,10 +13,10 @@ const projects = [
     title: "Mapitt (in progress)",
     caption: "3D Travel Route Visualization - Plot Your Trips on the Globe",
     description:
-      "An interactive web app that lets you plot travel routes on a fully 3D globe and generates cinematic, animated journey videos, built with Next.js (React, TypeScript, Tailwind CSS), React Three Fiber & Three.js, Mapbox GL JS, NestJS (tRPC, Prisma), and PostgreSQL.",
+      "An interactive web app that lets you plot travel routes on a fully 3D globe and generates cinematic, animated journey videos, built with Next.js, React Three Fiber & Three.js, Mapbox GL JS, NestJS, and PostgreSQL.",
     link: "https://github.com/Aaryansi/mapitt",
   },
-  
+
   {
     title: "Click-Ship",
     caption: "AI-Powered Git Changes Made Easy",
