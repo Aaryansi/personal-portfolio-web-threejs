@@ -89,8 +89,8 @@ const About = () => {
           About Me
         </h2>
         <p ref={textRef} className="text-xl text-gray-300 font-light mb-8">
-          Hey! I’m Aaryan, a Computer Science explorer at Rose-Hulman Institute of Technology, originally from Bhopal, India. 
-          I spend my time scrolling on tech blogs, books, jokes, tinkering with AI that probably thinks too much, and solving problems that didn’t exist until I found them.
+          Hey! I'm Aaryan, a Computer Science explorer at Rose-Hulman Institute of Technology, originally from Bhopal, India. 
+          I spend my time scrolling on tech blogs, books, jokes, tinkering with AI that probably thinks too much, and solving problems that didn't exist until I found them.
           Fueled by curiosity, late-night coding, and an unhealthy love for Coca-Cola, I thrive on building, breaking, and rebuilding until things just click or maybe go to production successfully.
         </p>
 
@@ -120,11 +120,7 @@ const About = () => {
         <div ref={socialLinksRef} className="flex gap-6 justify-center md:justify-start mt-8">
           <a href="https://www.linkedin.com/in/aaryansi/" target="_blank" rel="noopener noreferrer" className="text-lg font-medium neon-link">LinkedIn</a>
           <a href="https://github.com/Aaryansi" target="_blank" rel="noopener noreferrer" className="text-lg font-medium neon-link">GitHub</a>
-          <a href="/singh_aaryan_resume.pdf" target="_blank" rel="noopener noreferrer" className="text-lg font-medium neon-link">
-            Resume
-          </a>
           <a href="https://www.instagram.com/aaryan.sb/" target="_blank" rel="noopener noreferrer" className="text-lg font-medium neon-link">Instagram</a>
-          
         </div>
       </div>
 
