@@ -9,7 +9,22 @@ import * as THREE from "three";
 gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
-
+  {
+    title: "Mapitt (in progress)",
+    caption: "3D Travel Route Visualization - Plot Your Trips on the Globe",
+    description:
+      "An interactive web app that lets you plot travel routes on a fully 3D globe and generates cinematic, animated journey videos, built with Next.js (React, TypeScript, Tailwind CSS), React Three Fiber & Three.js, Mapbox GL JS, NestJS (tRPC, Prisma), and PostgreSQL.",
+    link: "https://github.com/Aaryansi/mapitt",
+  },
+  
+  {
+    title: "Click-Ship",
+    caption: "AI-Powered Git Changes Made Easy",
+    description:
+      "Click-Ship is a Chrome extension built with Node.js, Fastify, GPT-4o, and simple-git that lets you point at any part of your page, say the change in plain words, and it saves the edit to your Git repo for you.",
+    link: "https://drive.google.com/file/d/18aAb5ZTAS2SG_zxuYXauK5iCrdANIC8t/view?usp=sharing",
+  },
+  
   {
     title: "Rose Reviews",
     caption: "RHIT Course & Prof Review Platform.",
