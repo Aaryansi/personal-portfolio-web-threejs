@@ -121,6 +121,8 @@ const About = () => {
           <a href="https://www.linkedin.com/in/aaryansi/" target="_blank" rel="noopener noreferrer" className="text-lg font-medium neon-link">LinkedIn</a>
           <a href="https://github.com/Aaryansi" target="_blank" rel="noopener noreferrer" className="text-lg font-medium neon-link">GitHub</a>
           <a href="https://www.instagram.com/aaryan.sb/" target="_blank" rel="noopener noreferrer" className="text-lg font-medium neon-link">Instagram</a>
+            <a href="tel:+18125383729" className="text-lg font-medium neon-link">+1 812 538 3729</a>
+
         </div>
       </div>
 
