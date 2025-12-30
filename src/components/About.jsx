@@ -108,7 +108,7 @@ const About = () => {
 
         {/* Debug Log */}
         <div className="bg-black bg-opacity-40 p-5 border border-gray-600 rounded-lg shadow-md h-50 overflow-hidden text-green-400 font-mono text-sm md:w-3/4 mx-auto md:mx-0">
-          <h3 className="text-lg font-bold text-white mb-2 text-red-500">hi</h3>
+          <h3 className="text-lg font-bold text-white mb-2 text-red-500">git</h3>
           <div className="h-full overflow-auto">
             {logs.map((log, index) => (
               <p key={index} className="whitespace-nowrap">{log}</p>
