@@ -79,7 +79,7 @@ const Hero = () => {
         className="relative z-10 flex flex-col justify-center items-center h-full text-center px-6"
       >
         {/* Typewriter Effect */}
-        <div className="text-4xl md:text-5xl font-bold mb-6 font-stylish">
+        <div className="text-4xl md:text-5xl font-bold mb-6 font-stylish" style={{color: 'red'}}>
           <Typewriter
             options={{
               strings: ["Hi! I'm Aaryan!", "Welcome to my website!"],
