@@ -96,7 +96,7 @@ const About = () => {
 
         {/* Tech Stack */}
         <div className="mb-8">
-          <h3 className="text-3xl font-bold text-center md:text-left mb-4">Tech Stack</h3>
+          <h3 className="text-3xl font-bold text-center md:text-left mb-4">moto</h3>
           <div ref={techStackRef} className="grid grid-cols-4 md:grid-cols-6 gap-4">
             {techStack.sort(() => Math.random() - 0.5).slice(0, 12).map((tech, index) => (
               <div key={index} className="p-3 border border-gray-600 bg-black bg-opacity-30 rounded-lg text-center text-white text-sm transition-transform hover:scale-110 hover:border-white">
