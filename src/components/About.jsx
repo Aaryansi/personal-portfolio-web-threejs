@@ -89,7 +89,7 @@ const About = () => {
           cmd
         </h2>
         <p ref={textRef} className="text-xl text-gray-300 font-light mb-8">
-          Hey! I'm Aaryan, a Computer Science explorer at Rose-Hulman Institute of Technology, originally from Bhopal, India. 
+          my name is aaryan singh. !!! :)
           I spend my time scrolling on tech blogs, books, jokes, tinkering with AI that probably thinks too much, and solving problems that didn't exist until I found them.
           Fueled by curiosity, late-night coding, and an unhealthy love for Coca-Cola, I thrive on building, breaking, and rebuilding until things just click or maybe go to production successfully.
         </p>
