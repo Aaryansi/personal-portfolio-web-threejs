@@ -86,7 +86,7 @@ const About = () => {
       {/* Left Section - About Me Content */}
       <div className="relative z-10 max-w-3xl text-center md:text-left">
         <h2 ref={headingRef} className="text-6xl font-bold mb-6 font-stylish" style={{color: '#ef4444'}}>
-          hi
+          stuff
         </h2>
         <p ref={textRef} className="text-xl text-gray-300 font-light mb-8">
           my name is aaryan singh. !!! :)
