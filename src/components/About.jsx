@@ -85,7 +85,7 @@ const About = () => {
     <section id="about" className="relative min-h-screen bg-black text-white flex flex-col md:flex-row items-center justify-between px-10 py-20">
       {/* Left Section - About Me Content */}
       <div className="relative z-10 max-w-3xl text-center md:text-left">
-        <h2 ref={headingRef} className="text-6xl font-bold mb-6 font-stylish">
+        <h2 ref={headingRef} className="text-6xl font-bold mb-6 font-stylish" style={{color: '#ef4444'}}>
           cmd
         </h2>
         <p ref={textRef} className="text-xl text-gray-300 font-light mb-8">
