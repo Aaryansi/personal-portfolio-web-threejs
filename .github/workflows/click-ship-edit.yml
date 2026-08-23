@@ -1,0 +1,105 @@
+# Make a UI change and open a pull request, inside your own repository.
+#
+# The point of running here rather than on a server we host: nobody outside your account
+# ever holds a token that can write to your code. The job uses its own GITHUB_TOKEN, and
+# the model key is a repository secret you set. Click-Ship holds nothing.
+#
+# Copy this file into the repository you want to edit.
+
+name: Click-Ship edit
+
+# The run is named with the caller's correlation id. workflow_dispatch returns 204 with no
+# body, so there is no run id to hold on to - matching on a name the caller chose is how
+# the extension finds the run it just started, rather than guessing from timestamps.
+run-name: "Click-Ship: ${{ inputs.change }} [${{ inputs.correlation_id }}]"
+
+on:
+  workflow_dispatch:
+    inputs:
+      selector:
+        description: 'CSS selector of the element, e.g. .hero-title'
+        required: true
+      change:
+        description: 'What to change, e.g. "text -> Ship it" or "background: #111111"'
+        required: true
+      base:
+        description: 'Branch to base the change on'
+        required: false
+        default: main
+      correlation_id:
+        description: 'Opaque id so the caller can find this run'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  edit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository being edited
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.base }}
+          # the edit reads the base revision through `git show`, so it needs the history
+          fetch-depth: 0
+
+      # Click-Ship is not on npm, and should not be until it earns it. Checking the tool
+      # out beside the repo keeps the workflow honest about what it is running, and lets
+      # you pin a commit rather than trust a moving tag.
+      - name: Check out Click-Ship
+        uses: actions/checkout@v4
+        with:
+          repository: Aaryansi/click-ship
+          ref: master
+          path: .click-ship
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Install the tool's dependencies
+        working-directory: .click-ship/packages/server
+        run: npm install --omit=dev --no-audit --no-fund
+
+      - name: Apply the change
+        id: edit
+        env:
+          # optional. without it the deterministic edit runs, which handles fewer cases.
+          AI_API_KEY: ${{ secrets.CLICK_SHIP_AI_KEY }}
+          AI_BASE_URL: ${{ vars.CLICK_SHIP_AI_BASE_URL }}
+          AI_MODEL: ${{ vars.CLICK_SHIP_AI_MODEL }}
+        run: |
+          node .click-ship/packages/server/bin/click-ship-edit.js \
+            --selector "${{ inputs.selector }}" \
+            --change "${{ inputs.change }}" \
+            --base "${{ inputs.base }}" \
+            --repo-root "$GITHUB_WORKSPACE"
+
+      - name: Open a pull request
+        if: steps.edit.outputs.status == 'changed'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          branch="click-ship/$(date +%s)"
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$branch"
+          git add "${{ steps.edit.outputs.file }}"
+          git commit -m "UI: ${{ inputs.change }}"
+          git push --set-upstream origin "$branch"
+
+          # the job summary already contains the diff and the design-system notes
+          url=$(gh pr create \
+            --base "${{ inputs.base }}" \
+            --head "$branch" \
+            --title "UI: ${{ inputs.change }}" \
+            --body "Requested by @${{ github.actor }} on \`${{ inputs.selector }}\`.
+
+          See the [job summary](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}) for the diff and any design-system notes.")
+
+          echo "pull_request=$url" >> "$GITHUB_OUTPUT"
+          echo "[$url]($url)" >> "$GITHUB_STEP_SUMMARY"
