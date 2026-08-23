@@ -78,8 +78,9 @@ jobs:
             --base "${{ inputs.base }}" \
             --repo-root "$GITHUB_WORKSPACE"
 
-      - name: Open a pull request
+      - name: Push the change and open a pull request
         if: steps.edit.outputs.status == 'changed'
+        id: publish
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -91,15 +92,28 @@ jobs:
           git add "${{ steps.edit.outputs.file }}"
           git commit -m "UI: ${{ inputs.change }}"
           git push --set-upstream origin "$branch"
+          echo "branch=$branch" >> "$GITHUB_OUTPUT"
 
-          # the job summary already contains the diff and the design-system notes
-          url=$(gh pr create \
-            --base "${{ inputs.base }}" \
-            --head "$branch" \
-            --title "UI: ${{ inputs.change }}" \
-            --body "Requested by @${{ github.actor }} on \`${{ inputs.selector }}\`.
+          # Creating a pull request from a workflow needs "Allow GitHub Actions to create
+          # and approve pull requests", which is off by default and also permits workflows
+          # to approve reviews. Rather than require that, the branch is the deliverable:
+          # the caller opens the pull request with their own token, which also means it is
+          # authored by a person instead of a bot.
+          if url=$(gh pr create \
+                --base "${{ inputs.base }}" \
+                --head "$branch" \
+                --title "UI: ${{ inputs.change }}" \
+                --body "Requested by @${{ github.actor }} on \`${{ inputs.selector }}\`.
 
-          See the [job summary](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}) for the diff and any design-system notes.")
-
-          echo "pull_request=$url" >> "$GITHUB_OUTPUT"
-          echo "[$url]($url)" >> "$GITHUB_STEP_SUMMARY"
+          See the [job summary](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}) for the diff and any design-system notes." 2>/dev/null); then
+            echo "pull_request=$url" >> "$GITHUB_OUTPUT"
+            echo "[$url]($url)" >> "$GITHUB_STEP_SUMMARY"
+          else
+            compare="${{ github.server_url }}/${{ github.repository }}/compare/${{ inputs.base }}...$branch"
+            echo "compare_url=$compare" >> "$GITHUB_OUTPUT"
+            {
+              echo ""
+              echo "Pushed \`$branch\`. This repository does not let Actions open pull requests,"
+              echo "so [open it here]($compare) — or let the extension do it with your own token."
+            } >> "$GITHUB_STEP_SUMMARY"
+          fi
