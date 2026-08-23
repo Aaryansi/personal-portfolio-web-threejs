@@ -30,6 +30,10 @@ on:
         description: 'Opaque id so the caller can find this run'
         required: false
         default: ''
+      open_pr:
+        description: 'Open the pull request immediately. Leave false to review the branch first.'
+        required: false
+        default: 'false'
 
 permissions:
   contents: write
@@ -93,6 +97,21 @@ jobs:
           git commit -m "UI: ${{ inputs.change }}"
           git push --set-upstream origin "$branch"
           echo "branch=$branch" >> "$GITHUB_OUTPUT"
+
+          compare="${{ github.server_url }}/${{ github.repository }}/compare/${{ inputs.base }}...$branch"
+          echo "compare_url=$compare" >> "$GITHUB_OUTPUT"
+
+          # The branch is the reviewable artifact. A pull request is the approval, so by
+          # default one is not opened - the caller shows the diff, a person says yes, and
+          # only then does anything appear in front of reviewers. Opening it up front would
+          # put every half-considered idea into their queue.
+          if [ "${{ inputs.open_pr }}" != "true" ]; then
+            {
+              echo ""
+              echo "Pushed \`$branch\`. [Review the diff]($compare) — approve to open a pull request."
+            } >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
 
           # Creating a pull request from a workflow needs "Allow GitHub Actions to create
           # and approve pull requests", which is off by default and also permits workflows
