@@ -20,6 +20,7 @@
   transition: all 0.3s ease-in-out;
   animation: neonGlow 3s infinite alternate ease-in-out;
   -webkit-animation: neonGlow 3s infinite alternate ease-in-out;
+  background: #111111;
 }
 
 .floating-navbar.inactive {
